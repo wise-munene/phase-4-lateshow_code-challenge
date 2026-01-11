@@ -6,7 +6,7 @@ from sqlalchemy import MetaData
 
 app= Flask(__name__)
 app.secret_key= '7f5fd7a1212935cd38f36c8d699a42aeb2244b6acf7c6a27c4181bce1e2e0bb0'
-app.config['SQLALCHEMY_DATABASE_URI']= 'sqlite///app.db'
+app.config['SQLALCHEMY_DATABASE_URI']= 'sqlite:///app.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']= False
 app.json.compact = False
 
