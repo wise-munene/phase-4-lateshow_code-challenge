@@ -23,7 +23,6 @@ class Episode(db.Model, SerializerMixin):
         return data
 
 
-
 class Guest(db.Model, SerializerMixin):
     __tablename__ = 'guests'
     serialize_rules =('-appearances.guest',)
@@ -40,7 +39,6 @@ class Guest(db.Model, SerializerMixin):
             "name": self.name,
             "occupation": self.occupation
         }
-
 
 
 class Appearance(db.Model, SerializerMixin):

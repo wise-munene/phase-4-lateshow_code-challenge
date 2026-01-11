@@ -1,4 +1,4 @@
-from flask import request, session, jsonify
+from flask import request
 from flask_restful import Resource
 from model import Guest, Appearance, Episode
 from config import db, api, app
@@ -51,7 +51,7 @@ class Appearances(Resource):
         if not episode or not guest:
             return {"errors": ["validation errors"]}, 400
 
-        # Create new appearance
+        
         appearance = Appearance(rating=rating, episode_id=episode.id, guest_id=guest.id)
         db.session.add(appearance)
         db.session.commit()
@@ -66,7 +66,6 @@ class Appearances(Resource):
         }
         return response, 201
     
-
            
 api.add_resource(Episodes, '/episodes')
 api.add_resource(EpisodesByID, '/episodes/<int:id>')
